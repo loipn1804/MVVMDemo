@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
-            name="user"
-            type="liophan.mvvmdemo.model.User"/>
+            name="userViewModel"
+            type="liophan.mvvmdemo.viewmodel.UserViewModel"/>
     </data>
 
     <LinearLayout
@@ -18,25 +18,48 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="liophan.mvvmdemo.MainActivity">
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <TextView
             android:id="@+id/txtName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{user.name}"/>
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@{userViewModel.name}"
+            android:visibility="@{userViewModel.txtNameVisibility}"/>
 
         <TextView
             android:id="@+id/txtSchool"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{user.school}"/>
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@{userViewModel.school}"/>
 
         <TextView
             android:id="@+id/txtAge"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{String.valueOf(user.doubleAge())}"/>
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@{String.valueOf(userViewModel.age)}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            app:textView="@{userViewModel.user}"/>
+
+        <Button
+            android:id="@+id/btnAction"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{userViewModel.btnActionClick}"
+            android:text="Action"/>
+
+        <Button
+            android:id="@+id/btnToggleView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{userViewModel.toggleView}"
+            android:text="ToggleView"/>
     </LinearLayout>
 </layout>

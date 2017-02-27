@@ -1,4 +1,15 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    }
+}
 
 android {
     compileSdkVersion 25
@@ -20,6 +31,10 @@ android {
     dataBinding {
         enabled = true
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -29,4 +44,12 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.1'
     testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:recyclerview-v7:25.1.1'
+
+    compile 'com.googlecode.flickrj-android:flickrj-android:2.1.0'
+    compile 'org.slf4j:slf4j-android:1.7.7' // Required by Flickr library
+
+    compile('io.reactivex:rxandroid:1.1.0')
+    compile 'io.reactivex:rxjava:1.1.0'
 }

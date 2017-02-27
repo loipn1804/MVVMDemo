@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MVVMDemo</string>
+
+    <string name="str_null">NA</string>
+
+    <string name="photo_id">ID: </string>
 </resources>

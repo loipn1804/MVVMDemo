@@ -1,5 +1,7 @@
 package liophan.mvvmdemo.model;
 
+import java.util.Random;
+
 /**
  * Copyright (c) 2017, Stacck Pte Ltd. All rights reserved.
  *
@@ -45,5 +47,17 @@ public class User {
 
     public int doubleAge() {
         return age + age;
+    }
+
+    public static User randomUser() {
+        Random random = new Random();
+        String[] character = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
+        String name = "";
+        String school = "";
+        for (int i = 0; i < 5; i++) {
+            name += character[random.nextInt(10)];
+            school += character[random.nextInt(10)];
+        }
+        return new User(name, school, random.nextInt(10) + 20);
     }
 }
