@@ -14,21 +14,28 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
+
         </activity>
 
         <activity
             android:name=".ListUserActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity
-            android:name=".PhotoActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".PhotoActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name=".nonmvvm.SinglePhotoActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
